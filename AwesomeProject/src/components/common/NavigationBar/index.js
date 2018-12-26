@@ -1,5 +1,5 @@
 
-import React, {Component} from 'react'
+import React, {Component,propTypes} from 'react'
 import {
   Platform,
   StyleSheet,
@@ -12,6 +12,9 @@ const NAVBAR_HEIGHT_IOS = 44
 CONST NAVBAR_HEIGHT_ANDROID = 50
 
 export default class NavigationBar extends Component {
+  static propTypes = {
+
+  }
   constructor (props) {
     super(props)
     this.state = {
