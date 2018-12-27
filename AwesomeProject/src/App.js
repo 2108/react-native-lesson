@@ -11,8 +11,11 @@ import {
   Platform, 
   StyleSheet, 
   Text, 
-  View
+  View,
+  TouchableOpacity,
+  Image
 } from 'react-native';
+import NavigationBar from './components/common/NavigationBar/index'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -23,31 +26,42 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  renderBotton(image) {
+    return <TouchableOpacity>
+    <Image style={{width:24,height:24,margin: 5}} source={image}></Image>
+  </TouchableOpacity>
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native! pearyman</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View>
+        <NavigationBar 
+          title={'Test'}
+          leftButton={
+              this.renderBotton(require('./images/ic_arrow_back_white_36pt.png'))
+          }
+          rightButton={
+              this.renderBotton(require('./images/ic_star.png'))
+          }
+        />
+
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  // container: {
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  // },
+  // welcome: {
+  //   fontSize: 20,
+  //   textAlign: 'center',
+  //   margin: 10,
+  // },
+  // instructions: {
+  //   textAlign: 'center',
+  //   color: '#333333',
+  //   marginBottom: 5,
+  // },
 });

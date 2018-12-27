@@ -1,11 +1,5 @@
 export default {
-  page: {
-    flex: 1
-  },
-  status: {
-    backgroundColor: '#008BBF'
-  },
-  webview: {
+  navBar: {
     flex: 1
   }
 }
